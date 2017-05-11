@@ -26,10 +26,10 @@
 
 // Constants.
 
-BST.LINK_COLOR = "#122647";
-BST.HIGHLIGHT_CIRCLE_COLOR = "#007700";
-BST.FOREGROUND_COLOR = "#122647";
-BST.BACKGROUND_COLOR = "#bfd7ff";
+BST.LINK_COLOR = "#325389";
+BST.HIGHLIGHT_CIRCLE_COLOR = "#51ce48";
+BST.FOREGROUND_COLOR = "#325389";
+BST.BACKGROUND_COLOR = "#eaf2ff";
 BST.PRINT_COLOR = "#000000";
 
 BST.WIDTH_DELTA = 50;
@@ -95,7 +95,7 @@ BST.prototype.reset = function() {
 };
 
 BST.prototype.randomTreeCallback = function(event) {
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 16; i++) {
         var randomValue = Math.floor(Math.random() * 1000) + 1;
         randomValue = this.normalizeNumber(randomValue, 3);
         this.implementAction(this.insertElement.bind(this), randomValue);

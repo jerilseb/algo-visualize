@@ -525,7 +525,18 @@ function AnimationManager(objectManager) {
                 }
                 undoBlock.push(new UndoConnect(parseInt(nextCommand[1]), parseInt(nextCommand[2]), false));
             } else if (nextCommand[0].toUpperCase() == "CREATERECTANGLE") {
-                if (nextCommand.length == 9) {
+                if (nextCommand.length == 10) {
+                    this.animatedObjects.addRectangleObject(
+                        parseInt(nextCommand[1]), // ID
+                        nextCommand[2], // Label
+                        parseInt(nextCommand[3]), // w
+                        parseInt(nextCommand[4]), // h
+                        nextCommand[7], // xJustify
+                        nextCommand[8], // yJustify
+                        nextCommand[9], // background color
+                        "#000000"
+                    ); // foreground color
+                } else if (nextCommand.length == 9) {
                     this.animatedObjects.addRectangleObject(
                         parseInt(nextCommand[1]), // ID
                         nextCommand[2], // Label
@@ -694,7 +705,7 @@ function AnimationManager(objectManager) {
                         this.parseBool(nextCommand[8]),
                         this.parseBool(nextCommand[9]),
                         parseInt(nextCommand[10]),
-                        "#FFFFFF",
+                        "#d4ffd3",
                         "#000000"
                     );
                 } else {
@@ -707,7 +718,7 @@ function AnimationManager(objectManager) {
                         true,
                         false,
                         1,
-                        "#FFFFFF",
+                        "#d4ffd3",
                         "#000000"
                     );
                 }

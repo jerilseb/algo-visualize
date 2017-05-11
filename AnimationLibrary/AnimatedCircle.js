@@ -73,7 +73,7 @@ AnimatedCircle.prototype.draw = function(ctx) {
     ctx.globalAlpha = this.alpha;
 
     if (this.highlighted) {
-        ctx.fillStyle = "#ff0000";
+        ctx.fillStyle = "#ff5151";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius + this.highlightDiff, 0, Math.PI * 2, true);
         ctx.closePath();
@@ -89,10 +89,10 @@ AnimatedCircle.prototype.draw = function(ctx) {
     ctx.fill();
     ctx.stroke();
     ctx.textAlign = "center";
-    ctx.font = "12px sans-serif";
+    ctx.font = "14px sans-serif";
     ctx.textBaseline = "middle";
     ctx.lineWidth = 1;
-    ctx.fillStyle = this.foregroundColor;
+    ctx.fillStyle = "#000";
 
     var strList = this.label.split("\n");
     if (strList.length == 1) {
@@ -110,8 +110,8 @@ AnimatedCircle.prototype.draw = function(ctx) {
             var highlightStr = this.label.substring(this.highlightIndex, this.highlightIndex + 1);
             var rightStr = this.label.substring(this.highlightIndex + 1);
             ctx.fillText(leftStr, startingXForHighlight, this.y);
-            ctx.strokeStyle = "#FF0000";
-            ctx.fillStyle = "#FF0000";
+            ctx.strokeStyle = "#ff5151";
+            ctx.fillStyle = "#ff5151";
             ctx.fillText(highlightStr, startingXForHighlight + this.leftWidth, this.y);
 
             ctx.strokeStyle = this.labelColor;
