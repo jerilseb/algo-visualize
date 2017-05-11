@@ -29,7 +29,7 @@ var AnimatedCircle = function(objectID, objectLabel)
 {
 	this.objectID = objectID;
 	this.label = objectLabel;
-	this.radius = 16;
+	this.radius = 18;
 	this.thickness = 3;
 	this.x = 0;
 	this.y = 0;
@@ -100,7 +100,7 @@ AnimatedCircle.prototype.draw = function(ctx)
 	
 	ctx.fillStyle = this.backgroundColor;
 	ctx.strokeStyle = this.foregroundColor;
-	ctx.lineWidth = 1;
+	ctx.lineWidth = 2;
 	ctx.beginPath();
 	ctx.arc(this.x,this.y,this.radius,0,Math.PI*2, true);
 	ctx.closePath();
