@@ -697,13 +697,13 @@ function AnimationManager(objectManager) {
             } else if (nextCommand[0].toUpperCase() == "CREATELINKEDLIST") {
                 if (nextCommand.length == 11) {
                     this.animatedObjects.addLinkedListObject(
-                        parseInt(nextCommand[1]),
-                        nextCommand[2],
-                        parseInt(nextCommand[3]),
-                        parseInt(nextCommand[4]),
-                        parseFloat(nextCommand[7]),
-                        this.parseBool(nextCommand[8]),
-                        this.parseBool(nextCommand[9]),
+                        parseInt(nextCommand[1]), //id
+                        nextCommand[2], //value
+                        parseInt(nextCommand[3]), //width
+                        parseInt(nextCommand[4]), //height
+                        parseFloat(nextCommand[7]), //percent
+                        this.parseBool(nextCommand[8]), //vertical
+                        this.parseBool(nextCommand[9]), //posend
                         parseInt(nextCommand[10]),
                         "#d4ffd3",
                         "#000000"
