@@ -108,7 +108,7 @@ var SMALL_CURVE = [
 var SMALL_X_POS_LOGICAL = [800, 725, 875, 650, 950, 725, 875, 800];
 var SMALL_Y_POS_LOGICAL = [25, 125, 125, 225, 225, 325, 325, 425];
 
-var SMALL_ADJ_MATRIX_X_START = 700;
+var SMALL_ADJ_MATRIX_X_START = 300;
 var SMALL_ADJ_MATRIX_Y_START = 40;
 var SMALL_ADJ_MATRIX_WIDTH = 30;
 var SMALL_ADJ_MATRIX_HEIGHT = 30;
@@ -124,7 +124,7 @@ var SMALL_ADJ_LIST_WIDTH = 36;
 
 var SMALL_ADJ_LIST_SPACING = 18;
 
-var LARGE_ADJ_MATRIX_X_START = 575;
+var LARGE_ADJ_MATRIX_X_START = 300;
 var LARGE_ADJ_MATRIX_Y_START = 30;
 var LARGE_ADJ_MATRIX_WIDTH = 23;
 var LARGE_ADJ_MATRIX_HEIGHT = 23;
@@ -479,8 +479,8 @@ Graph.prototype.buildAdjMatrix = function() {
             this.adj_matrix_y_start + i * this.adj_matrix_height
         );
         this.cmd("SetForegroundColor", this.adj_matrix_index_y[i], VERTEX_INDEX_COLOR);
-        this.cmd("SetLayer", this.adj_matrix_index_x[i], 3);
-        this.cmd("SetLayer", this.adj_matrix_index_y[i], 3);
+        this.cmd("SetLayer", this.adj_matrix_index_x[i], 1);
+        this.cmd("SetLayer", this.adj_matrix_index_y[i], 1);
 
         for (var j = 0; j < this.size; j++) {
             this.adj_matrixID[i][j] = this.nextIndex++;
@@ -498,7 +498,7 @@ Graph.prototype.buildAdjMatrix = function() {
                 this.adj_matrix_x_start + j * this.adj_matrix_width,
                 this.adj_matrix_y_start + i * this.adj_matrix_height
             );
-            this.cmd("SetLayer", this.adj_matrixID[i][j], 3);
+            this.cmd("SetLayer", this.adj_matrixID[i][j], 1);
         }
     }
 };
