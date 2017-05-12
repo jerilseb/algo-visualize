@@ -193,7 +193,7 @@ MyAlgorithm.prototype.Insert = function(input) {
     var circleID = this.nextIndex++;
     var circleX = 50;
     var circleY = 30;
-    this.color = this.color || getRandomColor();
+    this.color = this.color || "#c9ffb2";
 
     // Create a circle
     this.cmd("CREATELINKEDLIST", circleID, input, circleX, circleY, 100, 100, 0.2, 0, 1, 1);
@@ -220,6 +220,8 @@ MyAlgorithm.prototype.Insert = function(input) {
         this.cmd("Connect", node.id, node.next.id);
         this.cmd("SetNull", node.id, 0);
         this.cmd("Disconnect", this.headID, node.next.id);
+        this.cmd("Connect", this.headID, node.id);
+
         this.cmd("Move", this.headID, node.x, 180);
         this.cmd("Move", this.headLabelID, node.x, 150);
     }
